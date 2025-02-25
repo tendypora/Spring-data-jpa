@@ -8,11 +8,11 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "users")
+@Table(name = "tab_users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
+    @Column(name = "id")
     private Integer id;
     @Column(length = 50, nullable = false)
     private String name;
@@ -20,6 +20,14 @@ public class User {
     private String username;
     @Column(length = 100, nullable = false)
     private String password;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
